@@ -13,43 +13,53 @@
 	<a-scene>
      
     <a-assets>
-        <img id="floor" src="https://cdn.glitch.com/81478d1f-0693-4625-b249-2b3090e1fd6f%2Ffloor_2.png?v=1603096012458">
+        <img id="floor" src="https://cdn.glitch.com/a49c7317-bd2b-4985-9271-ed128f70f7e8%2Ffloor.png?v=1601122964324">
+        
     </a-assets>
     
-    <a-sky  color="skyblue"></a-sky>
+    <a-sky  color="#6EBAA7"></a-sky>
     
-    <a-entity id="rig" position="0 0 5">
+    <a-entity id="rig" position="0 0 0">
         <a-camera id="camera"></a-camera> 
-        <a-plane material="color: #999999; src: #floor; repeat: 5 5" rotation="-90 0 0" scale="3 3 1" width="4" height="8"></a-plane>
     </a-entity>
     
+    <a-plane material="color: #999999; src: #floor; repeat: 10 10" rotation="-90 0 0" scale="3 3 1" width="4" height="10"></a-plane>
 		
-    <rw-room position="-2 0 -2" material="color:Orange">
-			 
-      <rw-wall position="5 0 0"></rw-wall>
-			<rw-wall position="5 0 4"></rw-wall>
-			<rw-wall position="0 0 5"></rw-wall>
-			
-      <rw-wall position="0 0 0">
-		  		<rw-doorhole id="holeA"></rw-doorhole>
-		  		<rw-doorlink from="#holeA" to="#holeB" position="2.5 0 0"></rw-doorlink>
-			</rw-wall>
-      
-		</rw-room>
-    
-    
-		<rw-room position="0 0 -3">
-			
-      <rw-wall position=" 1 0 -1" material="color:#787"></rw-wall>
-			
-      <rw-wall position=" 1 0  1" material="color:#877">
-				  <rw-doorhole id="holeB"></rw-doorhole>
-			</rw-wall>
-			
-      <rw-wall position="-1 0  1" material="color:#878"></rw-wall>
-			
-		</rw-room>
-    <rw-ceiling position="80 10" material="color:red"></rw-ceiling>
+    <rw-room outside="true" position="0 0 -8" material="color: #866; side: double">
+        <rw-ceiling></rw-ceiling>
+        <rw-floor></rw-floor>
+        <rw-wall position="4 0 0"></rw-wall>
+        <rw-wall position="4 0 4"></rw-wall>
+        <rw-wall position="0 0 4"></rw-wall>
+        <rw-wall position="0 0 0">
+            <rw-doorhole id="holeA"></rw-doorhole>
+            <rw-doorlink from="#holeA" to="#holeB" position="2.5 0 0"></rw-doorlink>
+        </rw-wall>
+      </rw-room>
+      <rw-room outside="true" side="double" position="-3 0 15" material="color: #866; side: double">
+          <rw-wall position=" 800  50"  side="double" material="color:#877; side: double">
+              <rw-doorhole id="holeB"></rw-doorhole>
+          </rw-wall>
+      </rw-room>
+
+      <rw-room outside="true" position="-1.5 0 -10" rotation="0 180 0" material="color: #866; side: double">
+          <rw-ceiling></rw-ceiling>
+          <rw-floor></rw-floor>
+          <rw-wall position="4 0 0"></rw-wall>
+          <rw-wall position="4 0 4"></rw-wall>
+          <rw-wall position="0 0 4"></rw-wall>
+          <rw-wall position="0 0 0">
+              <rw-doorhole id="holeC"></rw-doorhole>
+              <rw-doorlink from="#holeC" to="#holeD" position="2.5 0 0"></rw-doorlink>
+          </rw-wall>
+        </rw-room>
+       
+    <rw-room outside="true" side="double" position="-4 0 2" material="color: #866; side: double">
+            <rw-wall position=" 3 0  3"  side="double" material="color:#877; side: double">
+                <rw-doorhole id="holeD"></rw-doorhole>
+            </rw-wall>
+        </rw-room>
+	
   
   </a-scene>
   
